@@ -18,7 +18,7 @@ Positioned cardDemo(
     Function swipeRight,
     Function swipeLeft) {
   Size screenSize = MediaQuery.of(context).size;
-  print("Card");
+  // print("Card");
   return new Positioned(
     bottom: 100.0 + bottom,
     right: flag == 0 ? right != 0.0 ? right : null : null,

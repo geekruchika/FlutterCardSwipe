@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:path/path.dart';
 
 Positioned cardDemoDummy(
     DecorationImage img,
@@ -12,7 +11,7 @@ Positioned cardDemoDummy(
     BuildContext context) {
   Size screenSize = MediaQuery.of(context).size;
   // Size screenSize=(500.0,200.0);
-  print("dummyCard");
+  // print("dummyCard");
   return new Positioned(
     bottom: 100.0 + bottom,
     // right: flag == 0 ? right != 0.0 ? right : null : null,

@@ -123,7 +123,7 @@ class CardDemoState extends State<CardDemo> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     timeDilation = 0.4;
-    print("main");
+    // print("main");
     double initialBottom = 15.0;
     var dataLength = data.length;
     double backCardPosition = initialBottom + (dataLength - 1) * 10 + 10;
