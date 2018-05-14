@@ -32,6 +32,13 @@ flutter:
   - assets/img3.jpg
   - assets/img4.jpg
   - assets/img5.jpg
+  - assets/avatars/avatar-1.jpg
+  - assets/avatars/avatar-2.jpg
+  - assets/avatars/avatar-3.jpg
+  - assets/avatars/avatar-4.jpg
+  - assets/avatars/avatar-5.jpg
+  - assets/avatars/avatar-6.jpg
+ 
   
   #  - images/a_dot_burr.jpeg
   #  - images/a_dot_ham.jpeg

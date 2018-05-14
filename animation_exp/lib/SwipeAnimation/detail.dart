@@ -17,7 +17,7 @@ class _DetailPageState extends State<DetailPage> with TickerProviderStateMixin {
   Animation<double> heigth;
   DecorationImage type;
   _DetailPageState({this.type});
-  List data = [image5, image3, image2, image1,image4];
+  List data = [image5, image3, image2, image1, image4];
   double _appBarHeight = 256.0;
   AppBarBehavior _appBarBehavior = AppBarBehavior.pinned;
 
@@ -220,22 +220,21 @@ class _DetailPageState extends State<DetailPage> with TickerProviderStateMixin {
                                               CrossAxisAlignment.start,
                                           children: <Widget>[
                                             new CircleAvatar(
-                                              backgroundColor: Colors.black26,
+                                                backgroundImage: avatar1),
+                                            new CircleAvatar(
+                                              backgroundImage: avatar2,
                                             ),
                                             new CircleAvatar(
-                                              backgroundColor: Colors.black26,
+                                              backgroundImage: avatar3,
                                             ),
                                             new CircleAvatar(
-                                              backgroundColor: Colors.black26,
+                                              backgroundImage: avatar4,
                                             ),
                                             new CircleAvatar(
-                                              backgroundColor: Colors.black26,
+                                              backgroundImage: avatar5,
                                             ),
                                             new CircleAvatar(
-                                              backgroundColor: Colors.black26,
-                                            ),
-                                            new CircleAvatar(
-                                              backgroundColor: Colors.black26,
+                                              backgroundImage: avatar6,
                                             )
                                           ],
                                         )
@@ -305,6 +304,5 @@ class _DetailPageState extends State<DetailPage> with TickerProviderStateMixin {
         ),
       ),
     );
-
   }
 }
