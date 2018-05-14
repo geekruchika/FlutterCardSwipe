@@ -1,7 +1,7 @@
 
 # FlutterCardSwipe
 
-## Card Swipe Animation and Page Reveal
+## Card Swipe Animation
 
 # Demo
 
@@ -9,6 +9,6 @@
 
 ![Demo](https://github.com/geekruchika/FlutterCardSwipe/blob/master/animation_exp/ScreenGif/cardSwipe.gif)
 
-#### Page Reveal
+<!-- #### Page Reveal
 
-![Demo](https://github.com/geekruchika/FlutterCardSwipe/blob/master/animation_exp/ScreenGif/pageReveal.gif)
+![Demo](https://github.com/geekruchika/FlutterCardSwipe/blob/master/animation_exp/ScreenGif/pageReveal.gif) -->

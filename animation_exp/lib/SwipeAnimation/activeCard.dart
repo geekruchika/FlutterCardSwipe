@@ -53,7 +53,6 @@ Positioned cardDemo(
             tag: "img",
             child: new GestureDetector(
               onTap: () {
-                print("card clicked");
                 // Navigator.push(
                 //     context,
                 //     new MaterialPageRoute(

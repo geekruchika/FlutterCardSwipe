@@ -32,7 +32,8 @@ class CardDemoState extends State<CardDemo> with TickerProviderStateMixin {
     rotate = new Tween<double>(
       begin: -0.0,
       end: -40.0,
-    ).animate(
+    )
+        .animate(
       new CurvedAnimation(
         parent: _buttonController,
         curve: Curves.ease,
@@ -52,7 +53,8 @@ class CardDemoState extends State<CardDemo> with TickerProviderStateMixin {
     right = new Tween<double>(
       begin: 0.0,
       end: 400.0,
-    ).animate(
+    )
+        .animate(
       new CurvedAnimation(
         parent: _buttonController,
         curve: Curves.ease,
@@ -61,7 +63,8 @@ class CardDemoState extends State<CardDemo> with TickerProviderStateMixin {
     bottom = new Tween<double>(
       begin: 15.0,
       end: 100.0,
-    ).animate(
+    )
+        .animate(
       new CurvedAnimation(
         parent: _buttonController,
         curve: Curves.ease,
@@ -70,7 +73,8 @@ class CardDemoState extends State<CardDemo> with TickerProviderStateMixin {
     width = new Tween<double>(
       begin: 20.0,
       end: 25.0,
-    ).animate(
+    )
+        .animate(
       new CurvedAnimation(
         parent: _buttonController,
         curve: Curves.bounceOut,
@@ -144,10 +148,10 @@ class CardDemoState extends State<CardDemo> with TickerProviderStateMixin {
           actions: <Widget>[
             new GestureDetector(
               onTap: () {
-                Navigator.push(
-                    context,
-                    new MaterialPageRoute(
-                        builder: (context) => new PageMain()));
+                // Navigator.push(
+                //     context,
+                //     new MaterialPageRoute(
+                //         builder: (context) => new PageMain()));
               },
               child: new Container(
                   margin: const EdgeInsets.all(15.0),
