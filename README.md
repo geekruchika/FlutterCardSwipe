@@ -23,8 +23,8 @@ Creating the swipe view as used in the Tinder. Swipe right is considered accepte
 
 In the command terminal, run the following commands:
 
-    $ git clone https://github.com/geekruchika/FlutterDribble-Animation
-    $ cd FlutterDribble-Animation/dribbledanimation
+    $ git clone https://github.com/geekruchika/FlutterCardSwipe.git
+    $ cd FlutterCardSwipe/animation_exp
     $ flutter run
 
 # Simulate for iOS
