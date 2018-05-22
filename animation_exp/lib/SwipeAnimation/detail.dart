@@ -1,3 +1,4 @@
+import 'package:animation_exp/SwipeAnimation/data.dart';
 import 'package:flutter/material.dart';
 import 'package:animation_exp/SwipeAnimation/styles.dart';
 import 'package:flutter/scheduler.dart';
@@ -17,7 +18,7 @@ class _DetailPageState extends State<DetailPage> with TickerProviderStateMixin {
   Animation<double> heigth;
   DecorationImage type;
   _DetailPageState({this.type});
-  List data = [image5, image3, image2, image1, image4];
+  List data = imageData;
   double _appBarHeight = 256.0;
   AppBarBehavior _appBarBehavior = AppBarBehavior.pinned;
 
@@ -71,13 +72,11 @@ class _DetailPageState extends State<DetailPage> with TickerProviderStateMixin {
       child: new Container(
         width: width.value,
         height: heigth.value,
-        // alignment: Alignment.center,
         color: const Color.fromRGBO(106, 94, 175, 1.0),
         child: new Hero(
           tag: "img",
           child: new Card(
             color: Colors.transparent,
-            // elevation: 0.0,
             child: new Container(
               alignment: Alignment.center,
               width: width.value,
@@ -105,7 +104,6 @@ class _DetailPageState extends State<DetailPage> with TickerProviderStateMixin {
                             size: 30.0,
                           ),
                         ),
-                        // automaticallyImplyLeading: true,
                         expandedHeight: _appBarHeight,
                         pinned: _appBarBehavior == AppBarBehavior.pinned,
                         floating: _appBarBehavior == AppBarBehavior.floating ||
@@ -126,14 +124,11 @@ class _DetailPageState extends State<DetailPage> with TickerProviderStateMixin {
                             ],
                           ),
                         ),
-                        //  actions: <Widget>[new Text("ghjgj")],
                       ),
                       new SliverList(
                         delegate: new SliverChildListDelegate(<Widget>[
                           new Container(
                             color: Colors.white,
-                            // width: width.value,
-                            // height: heigth.value - 100,
                             child: new Padding(
                               padding: const EdgeInsets.all(35.0),
                               child: new Column(
@@ -150,7 +145,6 @@ class _DetailPageState extends State<DetailPage> with TickerProviderStateMixin {
                                     child: new Row(
                                       mainAxisAlignment:
                                           MainAxisAlignment.spaceBetween,
-                                      //crossAxisAlignment: CrossAxisAlignment.start,
                                       children: <Widget>[
                                         new Row(
                                           children: <Widget>[
@@ -257,7 +251,6 @@ class _DetailPageState extends State<DetailPage> with TickerProviderStateMixin {
                       height: 80.0,
                       decoration: new BoxDecoration(
                         color: new Color.fromRGBO(121, 114, 173, 1.0),
-                        //borderRadius: new BorderRadius.circular(8.0),
                       ),
                       alignment: Alignment.center,
                       child: new Row(

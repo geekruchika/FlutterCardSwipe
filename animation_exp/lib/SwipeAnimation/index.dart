@@ -1,8 +1,9 @@
 import 'dart:async';
+import 'package:animation_exp/SwipeAnimation/data.dart';
 import 'package:animation_exp/SwipeAnimation/dummyCard.dart';
 import 'package:animation_exp/SwipeAnimation/activeCard.dart';
-import 'package:animation_exp/SwipeAnimation/styles.dart';
-import 'package:animation_exp/PageReveal/page_main.dart';
+
+//import 'package:animation_exp/PageReveal/page_main.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart' show timeDilation;
 
@@ -18,13 +19,11 @@ class CardDemoState extends State<CardDemo> with TickerProviderStateMixin {
   Animation<double> bottom;
   Animation<double> width;
   int flag = 0;
-  // TabController tabController;
 
-  List data = [image3, image5, image2, image1, image4];
+  List data = imageData;
   List selectedData = [];
   void initState() {
     super.initState();
-    // tabController = new TabController(length: 4, vsync: this);
 
     _buttonController = new AnimationController(
         duration: new Duration(milliseconds: 1000), vsync: this);
@@ -32,8 +31,7 @@ class CardDemoState extends State<CardDemo> with TickerProviderStateMixin {
     rotate = new Tween<double>(
       begin: -0.0,
       end: -40.0,
-    )
-        .animate(
+    ).animate(
       new CurvedAnimation(
         parent: _buttonController,
         curve: Curves.ease,
@@ -53,8 +51,7 @@ class CardDemoState extends State<CardDemo> with TickerProviderStateMixin {
     right = new Tween<double>(
       begin: 0.0,
       end: 400.0,
-    )
-        .animate(
+    ).animate(
       new CurvedAnimation(
         parent: _buttonController,
         curve: Curves.ease,
@@ -63,8 +60,7 @@ class CardDemoState extends State<CardDemo> with TickerProviderStateMixin {
     bottom = new Tween<double>(
       begin: 15.0,
       end: 100.0,
-    )
-        .animate(
+    ).animate(
       new CurvedAnimation(
         parent: _buttonController,
         curve: Curves.ease,
@@ -73,8 +69,7 @@ class CardDemoState extends State<CardDemo> with TickerProviderStateMixin {
     width = new Tween<double>(
       begin: 20.0,
       end: 25.0,
-    )
-        .animate(
+    ).animate(
       new CurvedAnimation(
         parent: _buttonController,
         curve: Curves.bounceOut,
@@ -104,7 +99,6 @@ class CardDemoState extends State<CardDemo> with TickerProviderStateMixin {
     setState(() {
       data.remove(img);
       selectedData.add(img);
-      //print(selectedData);
     });
   }
 
@@ -127,7 +121,7 @@ class CardDemoState extends State<CardDemo> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     timeDilation = 0.4;
-    // print("main");
+
     double initialBottom = 15.0;
     var dataLength = data.length;
     double backCardPosition = initialBottom + (dataLength - 1) * 10 + 10;
