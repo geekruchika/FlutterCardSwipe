@@ -5,6 +5,8 @@
 
 Creating the swipe view as used in the Tinder. Swipe right is considered accepted and swipe left is rejected.It is a rebuild version of a UI design that I came across on [Dribbble](https://dribbble.com/shots/2216416-Showtime-app).
 
+You can also checkout the flow of animation and steps to design it briefly at my medium article [Tinder Swipe in Flutter](https://blog.geekyants.com/tinder-swipe-in-flutter-7e4fc56021bc)
+
 # Demo
 
 #### Card Swipe
