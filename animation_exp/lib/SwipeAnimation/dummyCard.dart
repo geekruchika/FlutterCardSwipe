@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 Positioned cardDemoDummy(
-    DecorationImage img,
+    Widget singleData,
     double bottom,
     double right,
     double left,
@@ -36,8 +36,8 @@ Positioned cardDemoDummy(
                 borderRadius: new BorderRadius.only(
                     topLeft: new Radius.circular(8.0),
                     topRight: new Radius.circular(8.0)),
-                image: img,
               ),
+              child: singleData,
             ),
             new Container(
                 width: screenSize.width / 1.2 + cardWidth,

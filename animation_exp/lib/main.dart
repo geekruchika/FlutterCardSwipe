@@ -1,5 +1,6 @@
 import 'package:animation_exp/SwipeAnimation/index.dart';
 import 'package:flutter/material.dart';
+import 'package:animation_exp/SwipeAnimation/data.dart';
 
 void main() => runApp(new MyApp());
 
@@ -12,10 +13,25 @@ class MyApp extends StatelessWidget {
       theme: new ThemeData(
         primarySwatch: Colors.blue,
       ),
-      // home: new PageMain(),
-      home: new CardDemo(),
-      //home: BottomNavigationDemo(),
-      // home:new exp(),
+      home: Scaffold(
+        body: new CardDemo(
+          onButtonPressAnimationTime: 1000,
+          data: imageData,
+          onSwipeLeft: (index) {
+            print("swipe left");
+            print(index);
+          },
+          onSwipeRight: (index) {
+            print("swipe right");
+            print(index);
+          },
+          onCardTap: (index) {
+            print("on card tap");
+            print(index);
+          },
+          noCardLeft: Text("LOL"),
+        ),
+      ),
     );
   }
 }
