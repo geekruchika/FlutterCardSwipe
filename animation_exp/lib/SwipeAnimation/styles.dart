@@ -26,17 +26,17 @@ Widget image1 = Container(
     decoration: BoxDecoration(color: Colors.blue),
     child: Center(child: Text("1")));
 Widget image2 = Container(
-    decoration: BoxDecoration(color: Colors.blue),
+    decoration: BoxDecoration(color: Colors.red),
     child: Center(child: Text("2")));
 
 Widget image3 = Container(
-    decoration: BoxDecoration(color: Colors.blue),
+    decoration: BoxDecoration(color: Colors.green),
     child: Center(child: Text("3")));
 Widget image4 = Container(
-    decoration: BoxDecoration(color: Colors.blue),
+    decoration: BoxDecoration(color: Colors.yellow),
     child: Center(child: Text("4")));
 Widget image5 = Container(
-    decoration: BoxDecoration(color: Colors.blue),
+    decoration: BoxDecoration(color: Colors.orange),
     child: Center(child: Text("5")));
 Widget image6 = Container(
     decoration: BoxDecoration(color: Colors.blue),
