@@ -1,4 +1,4 @@
-import 'package:animation_exp/SwipeAnimation/index.dart';
+import 'package:animation_exp/SwipeAnimation/gesture_card_deck.dart';
 import 'package:flutter/material.dart';
 import 'package:animation_exp/SwipeAnimation/data.dart';
 
@@ -9,15 +9,14 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return new MaterialApp(
       title: 'Flutter Demo',
-      // showPerformanceOverlay: true,
       theme: new ThemeData(
         primarySwatch: Colors.blue,
       ),
       home: Scaffold(
-        body: new CardDemo(
+        body: new GestureCardDeck(
           onButtonPressAnimationTime: 1000,
           data: imageData,
-          animationTime: Duration(milliseconds: 1000),
+          animationTime: Duration(milliseconds: 200),
           velocityToSwipe: 1200,
           leftSwipeButton: Container(
             height: 50,
@@ -25,7 +24,7 @@ class MyApp extends StatelessWidget {
             decoration: BoxDecoration(color: Colors.black),
             child: Center(
                 child:
-                    Text("Swipe Right", style: TextStyle(color: Colors.white))),
+                    Text("Swipe Left", style: TextStyle(color: Colors.white))),
           ),
           rightSwipeButton: Container(
             height: 50,

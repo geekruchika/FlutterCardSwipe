@@ -1,8 +1,8 @@
 import 'dart:math';
-import 'package:animation_exp/SwipeAnimation/activeCard.dart';
+import 'package:animation_exp/SwipeAnimation/current_deck_card.dart';
 import 'package:flutter/material.dart';
 
-class CardDemo extends StatefulWidget {
+class GestureCardDeck extends StatefulWidget {
   final int onButtonPressAnimationTime;
   final List data;
   final Function onSwipeRight;
@@ -15,11 +15,11 @@ class CardDemo extends StatefulWidget {
   final Widget leftSwipeButton;
   final Widget rightSwipeButton;
 
-  const CardDemo({
+  const GestureCardDeck({
     Key key,
     this.onButtonPressAnimationTime = 1000,
     this.velocityToSwipe = 1000,
-    this.animationTime = const Duration(milliseconds: 200),
+    this.animationTime = const Duration(milliseconds: 100),
     this.leftPosition = 0,
     this.topPosition = 0,
     this.rightSwipeButton,
@@ -30,10 +30,11 @@ class CardDemo extends StatefulWidget {
     @required this.onSwipeLeft,
   }) : super(key: key);
   @override
-  CardDemoState createState() => new CardDemoState();
+  GestureCardDeckState createState() => new GestureCardDeckState();
 }
 
-class CardDemoState extends State<CardDemo> with TickerProviderStateMixin {
+class GestureCardDeckState extends State<GestureCardDeck>
+    with TickerProviderStateMixin {
   Animation<double> rotate;
   Animation<double> right;
   Animation<double> bottom;
@@ -87,7 +88,7 @@ class CardDemoState extends State<CardDemo> with TickerProviderStateMixin {
       alignment: AlignmentDirectional.center,
       children: showData.reversed.map((item) {
         if (showData.indexOf(item) == 0) {
-          return ActiveCard(
+          return CurrentDeckCard(
             initialPosition: Offset(widget.leftPosition, backCardPosition),
             singleData: item,
             cardWidth: backCardWidth + 10,
@@ -103,7 +104,7 @@ class CardDemoState extends State<CardDemo> with TickerProviderStateMixin {
         } else {
           backCardPosition = backCardPosition + 10;
           backCardWidth = backCardWidth + 10;
-          return ActiveCard(
+          return CurrentDeckCard(
             isActive: false,
             initialPosition: Offset(widget.leftPosition, backCardPosition),
             singleData: item,
