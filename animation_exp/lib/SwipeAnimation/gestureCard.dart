@@ -64,62 +64,68 @@ class GestureCardState extends State<GestureCard>
         left: left,
         child: GestureDetector(
           onPanStart: (DragStartDetails details) {
-            currentOffset =
-                Offset(details.globalPosition.dx, details.globalPosition.dy);
+            if (widget.isActive)
+              currentOffset =
+                  Offset(details.globalPosition.dx, details.globalPosition.dy);
           },
           onPanUpdate: (DragUpdateDetails details) {
-            setState(() {
-              position = details;
-            });
-            top = position.globalPosition.dy -
-                (currentOffset.dy - previousOffset.dy);
-            left = (position.globalPosition.dx -
-                (currentOffset.dx - previousOffset.dx));
-            angle = (position.globalPosition.dx - currentOffset.dx) / 360;
+            if (widget.isActive) {
+              setState(() {
+                position = details;
+              });
+              top = position.globalPosition.dy -
+                  (currentOffset.dy - previousOffset.dy);
+              left = (position.globalPosition.dx -
+                  (currentOffset.dx - previousOffset.dx));
+              angle = (position.globalPosition.dx - currentOffset.dx) / 360;
+            }
           },
           onPanEnd: (DragEndDetails details) async {
-            if (angle > 0.50 ||
-                details.velocity.pixelsPerSecond.dx > widget.velocityToSwipe) {
-              animation =
-                  new Tween<double>(begin: angle, end: 1.0).animate(controller)
-                    ..addListener(() {
-                      setState(() {
-                        top = top - 100 * animation.value;
-                        left = left + 250 * animation.value;
+            if (widget.isActive) {
+              if (angle > 0.50 ||
+                  details.velocity.pixelsPerSecond.dx >
+                      widget.velocityToSwipe) {
+                animation = new Tween<double>(begin: angle, end: 1.0)
+                    .animate(controller)
+                      ..addListener(() {
+                        setState(() {
+                          top = top - 100 * animation.value;
+                          left = left + 250 * animation.value;
+                        });
                       });
-                    });
 
-              setState(() {
-                flag = 1;
-              });
-              await controller.forward();
-              await widget.swipeRight();
-            } else if (angle < -0.50 ||
-                details.velocity.pixelsPerSecond.dx < -widget.velocityToSwipe) {
-              animation =
-                  new Tween<double>(begin: -angle, end: 1.0).animate(controller)
-                    ..addListener(() {
-                      setState(() {
-                        top = top - 100 * animation.value;
-                        left = left - 250 * animation.value;
+                setState(() {
+                  flag = 1;
+                });
+                await controller.forward();
+                await widget.swipeRight();
+              } else if (angle < -0.50 ||
+                  details.velocity.pixelsPerSecond.dx <
+                      -widget.velocityToSwipe) {
+                animation = new Tween<double>(begin: -angle, end: 1.0)
+                    .animate(controller)
+                      ..addListener(() {
+                        setState(() {
+                          top = top - 100 * animation.value;
+                          left = left - 250 * animation.value;
+                        });
                       });
-                    });
-              setState(() {
-                flag = -1;
-              });
-
-              await controller.forward();
-              widget.swipeLeft();
-            } else
-              setState(() {
-                angle = 0;
-                previousOffset = Offset(
-                    widget.initialPosition.dx, widget.initialPosition.dy);
-                currentOffset = Offset(
-                    widget.initialPosition.dx, widget.initialPosition.dy);
-                top = widget.initialPosition.dy;
-                left = widget.initialPosition.dx;
-              });
+                setState(() {
+                  flag = -1;
+                });
+                await controller.forward();
+                widget.swipeLeft();
+              } else
+                setState(() {
+                  angle = 0;
+                  previousOffset = Offset(
+                      widget.initialPosition.dx, widget.initialPosition.dy);
+                  currentOffset = Offset(
+                      widget.initialPosition.dx, widget.initialPosition.dy);
+                  top = widget.initialPosition.dy;
+                  left = widget.initialPosition.dx;
+                });
+            }
           },
           child: Transform.rotate(
             angle: (flag == 0
@@ -132,41 +138,50 @@ class GestureCardState extends State<GestureCard>
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
                         GestureDetector(
-                            onTap: () async {
-                              animation =
-                                  new Tween<double>(begin: -angle, end: 1.0)
+                            onTap: widget.isActive
+                                ? () async {
+                                    animation = new Tween<double>(
+                                            begin: -angle, end: 1.0)
+                                        .animate(controller)
+                                          ..addListener(() {
+                                            setState(() {
+                                              top = top - 100 * animation.value;
+                                              left =
+                                                  left - 250 * animation.value;
+                                            });
+                                          });
+                                    setState(() {
+                                      flag = -1;
+                                    });
+                                    await controller.forward();
+                                    widget.swipeLeft();
+                                  }
+                                : () {
+                                    print("inActive Card");
+                                  },
+                            child: widget.leftSwipeButton),
+                        GestureDetector(
+                          onTap: widget.isActive
+                              ? () async {
+                                  animation = new Tween<double>(
+                                          begin: angle, end: 1.0)
                                       .animate(controller)
                                         ..addListener(() {
                                           setState(() {
                                             top = top - 100 * animation.value;
-                                            left = left - 250 * animation.value;
+                                            left = left + 250 * animation.value;
                                           });
                                         });
-                              setState(() {
-                                flag = -1;
-                              });
-                              await controller.forward();
-                              widget.swipeLeft();
-                            },
-                            child: widget.leftSwipeButton),
-                        GestureDetector(
-                          onTap: () async {
-                            animation =
-                                new Tween<double>(begin: angle, end: 1.0)
-                                    .animate(controller)
-                                      ..addListener(() {
-                                        setState(() {
-                                          top = top - 100 * animation.value;
-                                          left = left + 250 * animation.value;
-                                        });
-                                      });
 
-                            setState(() {
-                              flag = 1;
-                            });
-                            await controller.forward();
-                            widget.swipeRight();
-                          },
+                                  setState(() {
+                                    flag = 1;
+                                  });
+                                  await controller.forward();
+                                  widget.swipeRight();
+                                }
+                              : () {
+                                  print("inActiveCard");
+                                },
                           child: widget.rightSwipeButton,
                         )
                       ],

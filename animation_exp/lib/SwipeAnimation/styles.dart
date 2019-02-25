@@ -29,54 +29,54 @@ Widget image5 = Container(
 Widget image6 = Container(
     height: 400,
     width: 300,
-    decoration: BoxDecoration(color: Colors.blue),
+    decoration: BoxDecoration(color: Colors.yellow),
     child: Center(child: Text("6")));
 Widget image7 = Container(
     height: 400,
     width: 300,
-    decoration: BoxDecoration(color: Colors.blue),
+    decoration: BoxDecoration(color: Colors.pinkAccent),
     child: Center(child: Text("7")));
 Widget image8 = Container(
     height: 400,
     width: 300,
-    decoration: BoxDecoration(color: Colors.blue),
+    decoration: BoxDecoration(color: Colors.red),
     child: Center(child: Text("8")));
 Widget image9 = Container(
     height: 400,
     width: 300,
-    decoration: BoxDecoration(color: Colors.blue),
+    decoration: BoxDecoration(color: Colors.white),
     child: Center(child: Text("9")));
 Widget image10 = Container(
     height: 400,
     width: 300,
-    decoration: BoxDecoration(color: Colors.blue),
+    decoration: BoxDecoration(color: Colors.purple),
     child: Center(child: Text("10")));
 
 Widget image11 = Container(
     height: 400,
     width: 300,
-    decoration: BoxDecoration(color: Colors.blue),
+    decoration: BoxDecoration(color: Colors.tealAccent),
     child: Center(child: Text("11")));
 Widget image12 = Container(
     height: 400,
     width: 300,
-    decoration: BoxDecoration(color: Colors.blue),
+    decoration: BoxDecoration(color: Colors.deepOrange),
     child: Center(child: Text("12")));
 
 Widget image13 = Container(
     height: 400,
     width: 300,
-    decoration: BoxDecoration(color: Colors.blue),
+    decoration: BoxDecoration(color: Colors.cyanAccent),
     child: Center(child: Text("13")));
 Widget image14 = Container(
     height: 400,
     width: 300,
-    decoration: BoxDecoration(color: Colors.blue),
+    decoration: BoxDecoration(color: Colors.limeAccent),
     child: Center(child: Text("14")));
 Widget image15 = Container(
     height: 400,
     width: 300,
-    decoration: BoxDecoration(color: Colors.blue),
+    decoration: BoxDecoration(color: Colors.red),
     child: Center(child: Text("15")));
 
 ImageProvider avatar1 = new ExactAssetImage('assets/avatars/avatar-1.jpg');

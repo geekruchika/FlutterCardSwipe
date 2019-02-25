@@ -19,7 +19,7 @@ class CardDemo extends StatefulWidget {
     Key key,
     this.onButtonPressAnimationTime = 1000,
     this.velocityToSwipe = 1000,
-    this.animationTime = const Duration(milliseconds: 400),
+    this.animationTime = const Duration(milliseconds: 200),
     this.leftPosition = 0,
     this.topPosition = 0,
     this.rightSwipeButton,
