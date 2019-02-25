@@ -1,73 +1,81 @@
 import 'package:flutter/material.dart';
 
-// DecorationImage image1 = new DecorationImage(
-//   image: new ExactAssetImage('assets/img1.jpg'),
-//   fit: BoxFit.cover,
-// );
-// DecorationImage image2 = new DecorationImage(
-//   image: new ExactAssetImage('assets/img2.jpg'),
-//   fit: BoxFit.cover,
-// );
-
-// DecorationImage image3 = new DecorationImage(
-//   image: new ExactAssetImage('assets/img3.jpg'),
-//   fit: BoxFit.cover,
-// );
-// DecorationImage image4 = new DecorationImage(
-//   image: new ExactAssetImage('assets/img4.jpg'),
-//   fit: BoxFit.cover,
-// );
-// DecorationImage image5 = new DecorationImage(
-//   image: new ExactAssetImage('assets/img5.jpg'),
-//   fit: BoxFit.cover,
-// );
-
 Widget image1 = Container(
+    height: 400,
+    width: 300,
     decoration: BoxDecoration(color: Colors.blue),
     child: Center(child: Text("1")));
 Widget image2 = Container(
+    height: 400,
+    width: 300,
     decoration: BoxDecoration(color: Colors.red),
     child: Center(child: Text("2")));
 
 Widget image3 = Container(
+    height: 400,
+    width: 300,
     decoration: BoxDecoration(color: Colors.green),
     child: Center(child: Text("3")));
 Widget image4 = Container(
+    height: 400,
+    width: 300,
     decoration: BoxDecoration(color: Colors.yellow),
     child: Center(child: Text("4")));
 Widget image5 = Container(
+    height: 400,
+    width: 300,
     decoration: BoxDecoration(color: Colors.orange),
     child: Center(child: Text("5")));
 Widget image6 = Container(
+    height: 400,
+    width: 300,
     decoration: BoxDecoration(color: Colors.blue),
     child: Center(child: Text("6")));
 Widget image7 = Container(
+    height: 400,
+    width: 300,
     decoration: BoxDecoration(color: Colors.blue),
     child: Center(child: Text("7")));
 Widget image8 = Container(
+    height: 400,
+    width: 300,
     decoration: BoxDecoration(color: Colors.blue),
     child: Center(child: Text("8")));
 Widget image9 = Container(
+    height: 400,
+    width: 300,
     decoration: BoxDecoration(color: Colors.blue),
     child: Center(child: Text("9")));
 Widget image10 = Container(
+    height: 400,
+    width: 300,
     decoration: BoxDecoration(color: Colors.blue),
     child: Center(child: Text("10")));
 
 Widget image11 = Container(
+    height: 400,
+    width: 300,
     decoration: BoxDecoration(color: Colors.blue),
     child: Center(child: Text("11")));
 Widget image12 = Container(
+    height: 400,
+    width: 300,
     decoration: BoxDecoration(color: Colors.blue),
     child: Center(child: Text("12")));
 
 Widget image13 = Container(
+    height: 400,
+    width: 300,
     decoration: BoxDecoration(color: Colors.blue),
     child: Center(child: Text("13")));
 Widget image14 = Container(
+    height: 400,
+    width: 300,
     decoration: BoxDecoration(color: Colors.blue),
     child: Center(child: Text("14")));
 Widget image15 = Container(
+    height: 400,
+    width: 300,
     decoration: BoxDecoration(color: Colors.blue),
     child: Center(child: Text("15")));
 

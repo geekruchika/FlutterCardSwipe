@@ -1,6 +1,4 @@
 import 'dart:math';
-
-import 'package:animation_exp/SwipeAnimation/dummyCard.dart';
 import 'package:animation_exp/SwipeAnimation/activeCard.dart';
 import 'package:flutter/material.dart';
 
@@ -9,13 +7,23 @@ class CardDemo extends StatefulWidget {
   final List data;
   final Function onSwipeRight;
   final Function onSwipeLeft;
-  final Widget noCardLeft;
   final Function onCardTap;
+  final double velocityToSwipe;
+  final Duration animationTime;
+  final double leftPosition;
+  final double topPosition;
+  final Widget leftSwipeButton;
+  final Widget rightSwipeButton;
 
   const CardDemo({
     Key key,
     this.onButtonPressAnimationTime = 1000,
-    this.noCardLeft,
+    this.velocityToSwipe = 1000,
+    this.animationTime = const Duration(milliseconds: 400),
+    this.leftPosition = 0,
+    this.topPosition = 0,
+    this.rightSwipeButton,
+    this.leftSwipeButton,
     @required this.onCardTap,
     @required this.data,
     @required this.onSwipeRight,
@@ -43,7 +51,6 @@ class CardDemoState extends State<CardDemo> with TickerProviderStateMixin {
 
   onGestureSwipeLeft() {
     setState(() {
-      print("onGesture Left Called");
       widget.onSwipeLeft(data.indexOf(showData[0]));
       showData.removeAt(0);
       i++;
@@ -52,12 +59,10 @@ class CardDemoState extends State<CardDemo> with TickerProviderStateMixin {
       var j = data[4 + i];
       showData.add(j);
     }
-    print(showData.length);
   }
 
   onGestureSwipeRight() {
     setState(() {
-      print("onGesture Right Called");
       widget.onSwipeRight(data.indexOf(showData[0]));
       showData.removeAt(0);
       i++;
@@ -68,53 +73,50 @@ class CardDemoState extends State<CardDemo> with TickerProviderStateMixin {
     }
   }
 
+  onCardTap() {
+    widget.onCardTap(data.indexOf(showData[0]));
+  }
+
   @override
   Widget build(BuildContext context) {
     String key = Random().nextDouble().toString();
-    double initialBottom = 15.0;
-    var dataLength = showData.length;
-    double backCardPosition = initialBottom + (dataLength - 1) * 10 + 10;
+    double backCardPosition = widget.topPosition;
     double backCardWidth = -10.0;
-    return dataLength > 0
-        ? new Stack(
-            key: Key(key),
-            alignment: AlignmentDirectional.center,
-            children: showData.reversed.map((item) {
-              if (showData.indexOf(item) == 0) {
-                print("Active card called");
-                return ActiveCard(
-                  initialPosition: Offset(30, backCardPosition),
-                  singleData: item,
-                  left: 0.0,
-                  cardWidth: backCardWidth + 10,
-                  context: context,
-                  onGestureSwipeLeft: onGestureSwipeLeft,
-                  flag: flag,
-                  onGestureSwipeRight: onGestureSwipeRight,
-                  onCardTap: widget.onCardTap,
-                );
-              } else {
-                backCardPosition = backCardPosition + 10;
-                backCardWidth = backCardWidth + 10;
-
-                return ActiveCard(
-                  isActive: false,
-                  initialPosition: Offset(30, backCardPosition),
-                  singleData: item,
-                  left: 0.0,
-                  cardWidth: backCardWidth,
-                  context: context,
-                  onGestureSwipeLeft: onGestureSwipeLeft,
-                  flag: flag,
-                  onGestureSwipeRight: onGestureSwipeRight,
-                  onCardTap: widget.onCardTap,
-                );
-              }
-            }).toList(),
-          )
-        : (widget.noCardLeft == null)
-            ? new Text("No Event Left",
-                style: new TextStyle(color: Colors.white, fontSize: 50.0))
-            : widget.noCardLeft;
+    return new Stack(
+      key: Key(key),
+      alignment: AlignmentDirectional.center,
+      children: showData.reversed.map((item) {
+        if (showData.indexOf(item) == 0) {
+          return ActiveCard(
+            initialPosition: Offset(widget.leftPosition, backCardPosition),
+            singleData: item,
+            cardWidth: backCardWidth + 10,
+            context: context,
+            onGestureSwipeLeft: onGestureSwipeLeft,
+            onGestureSwipeRight: onGestureSwipeRight,
+            onCardTap: onCardTap,
+            velocityToSwipe: widget.velocityToSwipe,
+            animationTime: widget.animationTime,
+            leftSwipeButton: widget.leftSwipeButton,
+            rightSwipeButton: widget.rightSwipeButton,
+          );
+        } else {
+          backCardPosition = backCardPosition + 10;
+          backCardWidth = backCardWidth + 10;
+          return ActiveCard(
+            isActive: false,
+            initialPosition: Offset(widget.leftPosition, backCardPosition),
+            singleData: item,
+            cardWidth: backCardWidth,
+            context: context,
+            onGestureSwipeLeft: onGestureSwipeLeft,
+            onGestureSwipeRight: onGestureSwipeRight,
+            onCardTap: widget.onCardTap,
+            leftSwipeButton: widget.leftSwipeButton,
+            rightSwipeButton: widget.rightSwipeButton,
+          );
+        }
+      }).toList(),
+    );
   }
 }

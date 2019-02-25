@@ -17,22 +17,40 @@ class MyApp extends StatelessWidget {
         body: new CardDemo(
           onButtonPressAnimationTime: 1000,
           data: imageData,
+          animationTime: Duration(milliseconds: 1000),
+          velocityToSwipe: 1200,
+          leftSwipeButton: Container(
+            height: 50,
+            width: 150,
+            decoration: BoxDecoration(color: Colors.black),
+            child: Center(
+                child:
+                    Text("Swipe Right", style: TextStyle(color: Colors.white))),
+          ),
+          rightSwipeButton: Container(
+            height: 50,
+            width: 150,
+            decoration: BoxDecoration(color: Colors.black),
+            child: Center(
+                child:
+                    Text("Swipe Right", style: TextStyle(color: Colors.white))),
+          ),
           onSwipeLeft: (index) {
-            print("swipe left");
+            print("on swipe left");
             print(index);
           },
           onSwipeRight: (index) {
-            print("swipe right");
+            print("on swipe right");
             print(index);
           },
           onCardTap: (index) {
             print("on card tap");
             print(index);
           },
-          noCardLeft: Text("LOL"),
+          leftPosition: 50,
+          topPosition: 90,
         ),
       ),
-      
     );
   }
 }
