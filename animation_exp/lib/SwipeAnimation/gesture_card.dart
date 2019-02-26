@@ -9,19 +9,23 @@ class GestureCard extends StatefulWidget {
   final bool isActive;
   final Widget rightSwipeButton;
   final Widget leftSwipeButton;
+  final Widget leftSwipeBanner;
+  final Widget rightSwipeBanner;
   final Duration animationTime;
 
   GestureCard({
     Key key,
-    @required this.swipeRight,
-    @required this.swipeLeft,
-    @required this.child,
     this.isActive = true,
     this.initialPosition,
     this.leftSwipeButton,
     this.rightSwipeButton,
     this.velocityToSwipe,
     this.animationTime,
+    this.leftSwipeBanner,
+    this.rightSwipeBanner,
+    @required this.swipeRight,
+    @required this.swipeLeft,
+    @required this.child,
   }) : super(key: key);
 
   @override
@@ -59,6 +63,7 @@ class GestureCardState extends State<GestureCard>
 
   @override
   Widget build(BuildContext context) {
+    print(angle);
     return Positioned(
         top: top,
         left: left,
@@ -132,7 +137,30 @@ class GestureCardState extends State<GestureCard>
                 ? angle
                 : (flag == 1 ? animation.value : -animation.value)),
             child: Column(children: <Widget>[
-              widget.child,
+              Stack(
+                alignment:
+                    angle < 0 ? Alignment(1.0, -1.0) : Alignment(-1.0, -1.0),
+                children: <Widget>[
+                  widget.child,
+                  (flag == -1 || angle < 0)
+                      ? Opacity(
+                          child: widget.leftSwipeBanner == null
+                              ? null
+                              : widget.leftSwipeBanner,
+                          opacity: (flag == 0
+                              ? (angle.abs() * 2) > 1 ? 1 : angle.abs() * 2
+                              : animation.value),
+                        )
+                      : Opacity(
+                          child: widget.rightSwipeBanner == null
+                              ? null
+                              : widget.rightSwipeBanner,
+                          opacity: (flag == 0
+                              ? (angle.abs() * 2) > 1 ? 1 : angle.abs() * 2
+                              : animation.value),
+                        ),
+                ],
+              ),
               widget.leftSwipeButton != null
                   ? Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,

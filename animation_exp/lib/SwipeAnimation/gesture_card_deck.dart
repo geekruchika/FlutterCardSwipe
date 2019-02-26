@@ -3,7 +3,6 @@ import 'package:animation_exp/SwipeAnimation/current_deck_card.dart';
 import 'package:flutter/material.dart';
 
 class GestureCardDeck extends StatefulWidget {
-  final int onButtonPressAnimationTime;
   final List data;
   final Function onSwipeRight;
   final Function onSwipeLeft;
@@ -14,16 +13,19 @@ class GestureCardDeck extends StatefulWidget {
   final double topPosition;
   final Widget leftSwipeButton;
   final Widget rightSwipeButton;
+  final Widget leftSwipeBanner;
+  final Widget rightSwipeBanner;
 
   const GestureCardDeck({
     Key key,
-    this.onButtonPressAnimationTime = 1000,
     this.velocityToSwipe = 1000,
     this.animationTime = const Duration(milliseconds: 100),
     this.leftPosition = 0,
     this.topPosition = 0,
     this.rightSwipeButton,
     this.leftSwipeButton,
+    this.leftSwipeBanner,
+    this.rightSwipeBanner,
     @required this.onCardTap,
     @required this.data,
     @required this.onSwipeRight,
@@ -100,6 +102,8 @@ class GestureCardDeckState extends State<GestureCardDeck>
             animationTime: widget.animationTime,
             leftSwipeButton: widget.leftSwipeButton,
             rightSwipeButton: widget.rightSwipeButton,
+            leftSwipeBanner: widget.leftSwipeBanner,
+            rightSwipeBanner: widget.rightSwipeBanner,
           );
         } else {
           backCardPosition = backCardPosition + 10;

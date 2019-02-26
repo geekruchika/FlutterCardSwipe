@@ -14,6 +14,8 @@ class CurrentDeckCard extends StatelessWidget {
   final Duration animationTime;
   final Widget leftSwipeButton;
   final Widget rightSwipeButton;
+  final Widget leftSwipeBanner;
+  final Widget rightSwipeBanner;
   CurrentDeckCard({
     this.isActive = true,
     this.singleData,
@@ -27,6 +29,8 @@ class CurrentDeckCard extends StatelessWidget {
     this.animationTime,
     this.leftSwipeButton,
     this.rightSwipeButton,
+    this.leftSwipeBanner,
+    this.rightSwipeBanner,
   });
 
   @override
@@ -38,6 +42,8 @@ class CurrentDeckCard extends StatelessWidget {
       velocityToSwipe: velocityToSwipe,
       leftSwipeButton: leftSwipeButton,
       rightSwipeButton: rightSwipeButton,
+      leftSwipeBanner: leftSwipeBanner,
+      rightSwipeBanner: rightSwipeBanner,
       swipeLeft: () {
         onGestureSwipeLeft();
       },

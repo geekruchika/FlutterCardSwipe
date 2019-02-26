@@ -14,7 +14,6 @@ class MyApp extends StatelessWidget {
       ),
       home: Scaffold(
         body: new GestureCardDeck(
-          onButtonPressAnimationTime: 1000,
           data: imageData,
           animationTime: Duration(milliseconds: 200),
           velocityToSwipe: 1200,
@@ -48,6 +47,18 @@ class MyApp extends StatelessWidget {
           },
           leftPosition: 50,
           topPosition: 90,
+          leftSwipeBanner: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(
+              child: Text("NO"),
+            ),
+          ),
+          rightSwipeBanner: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(
+              child: Text("Yes"),
+            ),
+          ),
         ),
       ),
     );
