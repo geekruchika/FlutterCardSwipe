@@ -11,9 +11,4 @@ List imageData = [
   image8,
   image9,
   image10,
-  image11,
-  image12,
-  image13,
-  image14,
-  image15,
 ];

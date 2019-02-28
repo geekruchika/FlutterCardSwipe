@@ -15,6 +15,7 @@ class GestureCardDeck extends StatefulWidget {
   final Widget rightSwipeButton;
   final Widget leftSwipeBanner;
   final Widget rightSwipeBanner;
+  final bool showAsDeck;
 
   const GestureCardDeck({
     Key key,
@@ -26,6 +27,7 @@ class GestureCardDeck extends StatefulWidget {
     this.leftSwipeButton,
     this.leftSwipeBanner,
     this.rightSwipeBanner,
+    this.showAsDeck = true,
     @required this.onCardTap,
     @required this.data,
     @required this.onSwipeRight,
@@ -91,7 +93,8 @@ class GestureCardDeckState extends State<GestureCardDeck>
       children: showData.reversed.map((item) {
         if (showData.indexOf(item) == 0) {
           return CurrentDeckCard(
-            initialPosition: Offset(widget.leftPosition, backCardPosition),
+            initialPosition: Offset(widget.leftPosition,
+                widget.showAsDeck ? backCardPosition + 10 : backCardPosition),
             singleData: item,
             cardWidth: backCardWidth + 10,
             context: context,
@@ -106,8 +109,7 @@ class GestureCardDeckState extends State<GestureCardDeck>
             rightSwipeBanner: widget.rightSwipeBanner,
           );
         } else {
-          backCardPosition = backCardPosition + 10;
-          backCardWidth = backCardWidth + 10;
+          if (widget.showAsDeck) backCardPosition = backCardPosition + 10;
           return CurrentDeckCard(
             isActive: false,
             initialPosition: Offset(widget.leftPosition, backCardPosition),

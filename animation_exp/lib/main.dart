@@ -15,23 +15,30 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         body: new GestureCardDeck(
           data: imageData,
-          animationTime: Duration(milliseconds: 200),
+          animationTime: Duration(milliseconds: 1000),
+          showAsDeck: true,
           velocityToSwipe: 1200,
           leftSwipeButton: Container(
             height: 50,
             width: 150,
-            decoration: BoxDecoration(color: Colors.black),
+            decoration: BoxDecoration(
+                color: Colors.red,
+                borderRadius: BorderRadius.all(
+                  Radius.circular(8),
+                )),
             child: Center(
-                child:
-                    Text("Swipe Left", style: TextStyle(color: Colors.white))),
+                child: Text("NOPE", style: TextStyle(color: Colors.white))),
           ),
           rightSwipeButton: Container(
             height: 50,
             width: 150,
-            decoration: BoxDecoration(color: Colors.black),
+            decoration: BoxDecoration(
+                color: Colors.green,
+                borderRadius: BorderRadius.all(
+                  Radius.circular(8),
+                )),
             child: Center(
-                child:
-                    Text("Swipe Right", style: TextStyle(color: Colors.white))),
+                child: Text("YEAH", style: TextStyle(color: Colors.white))),
           ),
           onSwipeLeft: (index) {
             print("on swipe left");
@@ -48,17 +55,42 @@ class MyApp extends StatelessWidget {
           leftPosition: 50,
           topPosition: 90,
           leftSwipeBanner: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Container(
-              child: Text("NO"),
+            padding: const EdgeInsets.all(32.0),
+            child: Transform.rotate(
+              angle: 0.5,
+              child: Container(
+                decoration: BoxDecoration(
+                    border: Border.all(color: Colors.red, width: 2.0),
+                    borderRadius: BorderRadius.all(Radius.circular(8))),
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text("NOPE",
+                      style: TextStyle(
+                          fontSize: 24,
+                          color: Colors.red,
+                          fontWeight: FontWeight.bold)),
+                ),
+              ),
             ),
           ),
           rightSwipeBanner: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Container(
-              child: Text("Yes"),
-            ),
-          ),
+              padding: const EdgeInsets.all(32.0),
+              child: Transform.rotate(
+                angle: -0.5,
+                child: Container(
+                  decoration: BoxDecoration(
+                      border: Border.all(color: Colors.green, width: 2.0),
+                      borderRadius: BorderRadius.all(Radius.circular(8))),
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text("YEAH",
+                        style: TextStyle(
+                            color: Colors.green,
+                            fontSize: 24,
+                            fontWeight: FontWeight.bold)),
+                  ),
+                ),
+              )),
         ),
       ),
     );

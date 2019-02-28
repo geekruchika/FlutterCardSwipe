@@ -45,7 +45,6 @@ class GestureCardState extends State<GestureCard>
   double top = 0;
   double left = 0;
   double angle = 0;
-
   @override
   void initState() {
     controller = new AnimationController(
@@ -57,13 +56,11 @@ class GestureCardState extends State<GestureCard>
     top = widget.initialPosition.dy;
     left = widget.initialPosition.dx;
     position = DragUpdateDetails(globalPosition: widget.initialPosition);
-
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
-    print(angle);
     return Positioned(
         top: top,
         left: left,
@@ -163,7 +160,6 @@ class GestureCardState extends State<GestureCard>
               ),
               widget.leftSwipeButton != null
                   ? Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
                         GestureDetector(
                             onTap: widget.isActive

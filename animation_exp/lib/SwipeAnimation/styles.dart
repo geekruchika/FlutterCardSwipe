@@ -1,83 +1,116 @@
 import 'package:flutter/material.dart';
 
 Widget image1 = Container(
-    height: 400,
-    width: 300,
-    decoration: BoxDecoration(color: Colors.blue),
-    child: Center(child: Text("1")));
+  height: 400,
+  width: 300,
+  decoration: BoxDecoration(
+      image: new DecorationImage(
+        image: new ExactAssetImage('assets/img1.jpg'),
+        fit: BoxFit.cover,
+      ),
+      color: Colors.blue,
+      borderRadius: BorderRadius.all(Radius.circular(8))),
+);
 Widget image2 = Container(
-    height: 400,
-    width: 300,
-    decoration: BoxDecoration(color: Colors.red),
-    child: Center(child: Text("2")));
+  height: 400,
+  width: 300,
+  decoration: BoxDecoration(
+      image: new DecorationImage(
+        image: new ExactAssetImage('assets/img2.jpg'),
+        fit: BoxFit.cover,
+      ),
+      color: Colors.red,
+      borderRadius: BorderRadius.all(Radius.circular(8))),
+);
 
 Widget image3 = Container(
-    height: 400,
-    width: 300,
-    decoration: BoxDecoration(color: Colors.green),
-    child: Center(child: Text("3")));
+  height: 400,
+  width: 300,
+  decoration: BoxDecoration(
+      image: new DecorationImage(
+        image: new ExactAssetImage('assets/img3.jpg'),
+        fit: BoxFit.cover,
+      ),
+      color: Colors.green,
+      borderRadius: BorderRadius.all(Radius.circular(8))),
+);
 Widget image4 = Container(
-    height: 400,
-    width: 300,
-    decoration: BoxDecoration(color: Colors.yellow),
-    child: Center(child: Text("4")));
+  height: 400,
+  width: 300,
+  decoration: BoxDecoration(
+      image: new DecorationImage(
+        image: new ExactAssetImage('assets/img4.jpg'),
+        fit: BoxFit.cover,
+      ),
+      color: Colors.yellow,
+      borderRadius: BorderRadius.all(Radius.circular(8))),
+);
 Widget image5 = Container(
     height: 400,
     width: 300,
-    decoration: BoxDecoration(color: Colors.orange),
+    decoration: BoxDecoration(
+        image: new DecorationImage(
+          image: new ExactAssetImage('assets/img5.jpg'),
+          fit: BoxFit.cover,
+        ),
+        color: Colors.orange,
+        borderRadius: BorderRadius.all(Radius.circular(8))),
     child: Center(child: Text("5")));
 Widget image6 = Container(
-    height: 400,
-    width: 300,
-    decoration: BoxDecoration(color: Colors.yellow),
-    child: Center(child: Text("6")));
+  height: 400,
+  width: 300,
+  decoration: BoxDecoration(
+      image: new DecorationImage(
+        image: new ExactAssetImage('assets/img2.jpg'),
+        fit: BoxFit.cover,
+      ),
+      color: Colors.yellow,
+      borderRadius: BorderRadius.all(Radius.circular(8))),
+);
 Widget image7 = Container(
-    height: 400,
-    width: 300,
-    decoration: BoxDecoration(color: Colors.pinkAccent),
-    child: Center(child: Text("7")));
+  height: 400,
+  width: 300,
+  decoration: BoxDecoration(
+      image: new DecorationImage(
+        image: new ExactAssetImage('assets/img1.jpg'),
+        fit: BoxFit.cover,
+      ),
+      color: Colors.pinkAccent,
+      borderRadius: BorderRadius.all(Radius.circular(8))),
+);
 Widget image8 = Container(
-    height: 400,
-    width: 300,
-    decoration: BoxDecoration(color: Colors.red),
-    child: Center(child: Text("8")));
+  height: 400,
+  width: 300,
+  decoration: BoxDecoration(
+      image: new DecorationImage(
+        image: new ExactAssetImage('assets/img3.jpg'),
+        fit: BoxFit.cover,
+      ),
+      color: Colors.red,
+      borderRadius: BorderRadius.all(Radius.circular(8))),
+);
 Widget image9 = Container(
-    height: 400,
-    width: 300,
-    decoration: BoxDecoration(color: Colors.white),
-    child: Center(child: Text("9")));
+  height: 400,
+  width: 300,
+  decoration: BoxDecoration(
+      image: new DecorationImage(
+        image: new ExactAssetImage('assets/img2.jpg'),
+        fit: BoxFit.cover,
+      ),
+      color: Colors.white,
+      borderRadius: BorderRadius.all(Radius.circular(8))),
+);
 Widget image10 = Container(
-    height: 400,
-    width: 300,
-    decoration: BoxDecoration(color: Colors.purple),
-    child: Center(child: Text("10")));
-
-Widget image11 = Container(
-    height: 400,
-    width: 300,
-    decoration: BoxDecoration(color: Colors.tealAccent),
-    child: Center(child: Text("11")));
-Widget image12 = Container(
-    height: 400,
-    width: 300,
-    decoration: BoxDecoration(color: Colors.deepOrange),
-    child: Center(child: Text("12")));
-
-Widget image13 = Container(
-    height: 400,
-    width: 300,
-    decoration: BoxDecoration(color: Colors.cyanAccent),
-    child: Center(child: Text("13")));
-Widget image14 = Container(
-    height: 400,
-    width: 300,
-    decoration: BoxDecoration(color: Colors.limeAccent),
-    child: Center(child: Text("14")));
-Widget image15 = Container(
-    height: 400,
-    width: 300,
-    decoration: BoxDecoration(color: Colors.red),
-    child: Center(child: Text("15")));
+  height: 400,
+  width: 300,
+  decoration: BoxDecoration(
+      image: new DecorationImage(
+        image: new ExactAssetImage('assets/img4.jpg'),
+        fit: BoxFit.cover,
+      ),
+      color: Colors.purple,
+      borderRadius: BorderRadius.all(Radius.circular(8))),
+);
 
 ImageProvider avatar1 = new ExactAssetImage('assets/avatars/avatar-1.jpg');
 ImageProvider avatar2 = new ExactAssetImage('assets/avatars/avatar-2.jpg');
