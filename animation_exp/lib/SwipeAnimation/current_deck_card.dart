@@ -59,7 +59,7 @@ class CurrentDeckCard extends StatelessWidget {
           child: Center(
             child: new Card(
               color: Colors.transparent,
-              child: Container(child: singleData),
+              child: Container(child: singleData,),
               elevation: 4.0,
             ),
           ),

@@ -158,7 +158,7 @@ class GestureCardState extends State<GestureCard>
                         ),
                 ],
               ),
-              widget.leftSwipeButton != null
+              widget.leftSwipeButton != null && widget.isActive
                   ? Row(
                       children: <Widget>[
                         GestureDetector(

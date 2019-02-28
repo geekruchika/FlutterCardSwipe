@@ -17,10 +17,10 @@ class MyApp extends StatelessWidget {
           data: imageData,
           animationTime: Duration(milliseconds: 1000),
           showAsDeck: true,
-          velocityToSwipe: 1200,
+          velocityToSwipe: 600,
           leftSwipeButton: Container(
             height: 50,
-            width: 150,
+            width: 140,
             decoration: BoxDecoration(
                 color: Colors.red,
                 borderRadius: BorderRadius.all(
@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
           ),
           rightSwipeButton: Container(
             height: 50,
-            width: 150,
+            width: 140,
             decoration: BoxDecoration(
                 color: Colors.green,
                 borderRadius: BorderRadius.all(
@@ -52,8 +52,8 @@ class MyApp extends StatelessWidget {
             print("on card tap");
             print(index);
           },
-          leftPosition: 50,
-          topPosition: 90,
+          leftPosition: 60,
+          topPosition: 80,
           leftSwipeBanner: Padding(
             padding: const EdgeInsets.all(32.0),
             child: Transform.rotate(

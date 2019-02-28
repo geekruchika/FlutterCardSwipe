@@ -86,17 +86,21 @@ class GestureCardDeckState extends State<GestureCardDeck>
   Widget build(BuildContext context) {
     String key = Random().nextDouble().toString();
     double backCardPosition = widget.topPosition;
-    double backCardWidth = -10.0;
+    double backLeftPosition = widget.leftPosition;
+
+    // double backCardWidth = -10.0;
     return new Stack(
       key: Key(key),
-      alignment: AlignmentDirectional.center,
+      // alignment: AlignmentDirectional.center,
       children: showData.reversed.map((item) {
         if (showData.indexOf(item) == 0) {
+          
           return CurrentDeckCard(
-            initialPosition: Offset(widget.leftPosition,
+            isActive: true,
+            initialPosition: Offset(  backLeftPosition-5,
                 widget.showAsDeck ? backCardPosition + 10 : backCardPosition),
             singleData: item,
-            cardWidth: backCardWidth + 10,
+            // cardWidth: backCardWidth + 10,
             context: context,
             onGestureSwipeLeft: onGestureSwipeLeft,
             onGestureSwipeRight: onGestureSwipeRight,
@@ -110,15 +114,17 @@ class GestureCardDeckState extends State<GestureCardDeck>
           );
         } else {
           if (widget.showAsDeck) backCardPosition = backCardPosition + 10;
+          // backCardWidth = backCardWidth - 10;
+          backLeftPosition = backLeftPosition - 5;
+
           return CurrentDeckCard(
             isActive: false,
-            initialPosition: Offset(widget.leftPosition, backCardPosition),
+            initialPosition: Offset( backLeftPosition, backCardPosition),
             singleData: item,
-            cardWidth: backCardWidth,
             context: context,
             onGestureSwipeLeft: onGestureSwipeLeft,
             onGestureSwipeRight: onGestureSwipeRight,
-            onCardTap: widget.onCardTap,
+            onCardTap: (){},
             leftSwipeButton: widget.leftSwipeButton,
             rightSwipeButton: widget.rightSwipeButton,
           );
