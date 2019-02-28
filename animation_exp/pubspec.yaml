@@ -13,13 +13,11 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
-
 # For information on the generic Dart part of this file, see the
 # following page: https://www.dartlang.org/tools/pub/pubspec
 
 # The following section is specific to Flutter.
 flutter:
-
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
@@ -27,28 +25,23 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-  - assets/img1.jpg
-  - assets/img2.jpg
-  - assets/img3.jpg
-  - assets/img4.jpg
-  - assets/img5.jpg
-  - assets/avatars/avatar-1.jpg
-  - assets/avatars/avatar-2.jpg
-  - assets/avatars/avatar-3.jpg
-  - assets/avatars/avatar-4.jpg
-  - assets/avatars/avatar-5.jpg
-  - assets/avatars/avatar-6.jpg
- 
-  
+    - assets/img1.jpg
+    - assets/img2.jpg
+    - assets/img3.jpg
+    - assets/img4.jpg
+    - assets/img5.jpg
+    - assets/avatars/avatar-1.jpg
+    - assets/avatars/avatar-2.jpg
+    - assets/avatars/avatar-3.jpg
+    - assets/avatars/avatar-4.jpg
+    - assets/avatars/avatar-5.jpg
+    - assets/avatars/avatar-6.jpg
   #  - images/a_dot_burr.jpeg
   #  - images/a_dot_ham.jpeg
-
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.io/assets-and-images/#resolution-aware.
-
   # For details regarding adding assets from package dependencies, see
   # https://flutter.io/assets-and-images/#from-packages
-
   # To add custom fonts to your application, add a fonts section here,
   # in this "flutter" section. Each entry in this list should have a
   # "family" key with the font family name, and a "fonts" key with a
@@ -66,5 +59,5 @@ flutter:
   #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700
   #
-  # For details regarding fonts from package dependencies, 
+  # For details regarding fonts from package dependencies,
   # see https://flutter.io/custom-fonts/#from-packages
